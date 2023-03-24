@@ -1,10 +1,13 @@
 // submit-button on click event
 submit_btn = document.getElementById("submit-btn");
+loading = document.getElementById("loading");
+output = document.getElementById("output");
 
 submit_btn.addEventListener("click", function () {
+    submit_btn.disabled = true;
+    loading.style.display = "block";
     message = document.getElementById("input").value;
     
-    // post request
     fetch("http://damian125.pythonanywhere.com/api/spam", {
         method: "POST",
         headers: {
@@ -17,12 +20,16 @@ submit_btn.addEventListener("click", function () {
         return response.json();
     }).then((data) => {
         console.log(data);
-        if (data["result"] == "spam") {
-            document.getElementById("result").innerHTML = "Spam";
-            document.getElementById("result").style.color = "red";
+        loading.style.display = "none";
+        submit_btn.disabled = false;
+        
+        prediction = data.prediction;
+        confidence = data.confidence.toFixed(2);;
+
+        if (prediction == 0) {
+            output.innerHTML = "<p>Your message is " + confidence + "% <b>unlikely</b> a Spam.</p>";
         } else {
-            document.getElementById("result").innerHTML = "Not Spam";
-            document.getElementById("result").style.color = "green";
+            output.innerHTML = "<p>Your message is " + confidence + "% <b>likely</b> a Spam.</p>";
         }
     });
 });

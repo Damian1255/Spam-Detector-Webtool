@@ -20,12 +20,12 @@ submit_btn.addEventListener("click", function () {
     }).then((response) => {
         return response.json();
     }).then((data) => {
-        console.log(data);
-        loading.style.display = "none";
-        submit_btn.disabled = false;
-        
         prediction = data.prediction;
-        confidence = data.confidence.toFixed(2);;
+        confidence = data.confidence.toFixed(2);
+
+        loading.style.display = "none";
+        output.style.display = "block";
+        submit_btn.disabled = false;
 
         if (prediction == 0) {
             output.innerHTML = "<p>Your message is <b>" + confidence + "% unlikely a Spam.</b></p>";

@@ -23,14 +23,15 @@ submit_btn.addEventListener("click", function () {
         prediction = data.prediction;
         confidence = data.confidence.toFixed(2);
 
+        console.log(data);
         loading.style.display = "none";
         output.style.display = "block";
         submit_btn.disabled = false;
 
         if (prediction == 0) {
-            output.innerHTML = "<p>Your message is <b>" + confidence + "% unlikely a Spam.</b></p>";
+            output.innerHTML = "<p>Your message is <b>" + confidence + "% Unlikely</b> a <b>Spam.</b></p>";
         } else {
-            output.innerHTML = "<p>Your message is <b>" + confidence + "% likely a Spam.</b></p>";
+            output.innerHTML = "<p>Your message is <b>" + confidence + "% Likely</b> a <b>Spam.</b></p>";
         }
     });
 });

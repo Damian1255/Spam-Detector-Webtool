@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spam Detection Tool</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <h1>Spam Detection Tool</h1>
+        <p>Designed to decrypt the ciphertext from Applied Cryptography Final Assignment.<br>It is identifed that the product cipher uses both Vigenère and Rail-fence cipher to encrypt the plaintext.</p>
+        <div class="controls">
+            <input type="text" id="input" placeholder="Enter your Message"/>
+            <button id="submit-btn" type="submit">Detect</button>
+            <div id="status"></div>
+            <div id="output"></div>
+        </div>
+        <div id="loading">
+            <img src="images/loading.svg" alt="loading icon" width="60px">
+            <p>Detecting. Please wait...</p>
+        </div>
+    </div>
+    <footer class="footer">by D. - Last updated at 24/3/2023</footer>
+    <script src="script/app.js"></script>
+</body>
+</html>

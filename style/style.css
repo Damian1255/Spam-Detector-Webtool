@@ -19,7 +19,7 @@ h3 {
     margin-top: 40px;
 }
 
-input {
+input, textarea {
     max-width: 50%;
     width: 100%;
     padding: 5px 10px;
@@ -31,7 +31,7 @@ input {
     transition: all .3s;
 }
 
-input:hover {
+input:hover, textarea:hover {
     border: 4px solid rgb(80, 168, 216);
 }
 
@@ -39,6 +39,7 @@ button {
     background: #227dc7;
     border-radius: 5px;
     padding: 14px 40px;
+    margin-top: 20px;
     display: inline-block;
     border: none;
     color: #fdfdfe;

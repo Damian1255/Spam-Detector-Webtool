@@ -1,4 +1,3 @@
-// submit-button on click event
 submit_btn = document.getElementById("submit-btn");
 loading = document.getElementById("loading");
 output = document.getElementById("output");
